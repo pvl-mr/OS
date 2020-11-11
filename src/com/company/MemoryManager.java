@@ -39,6 +39,7 @@ public class MemoryManager {
     public void modify() {
         for (int i = 0; i < phMemory.getSize(); i++) {
             int timeModification = (int)(Math.random()*10)+1;
+            phMemory.getNote(i).setIsModified(true);
             phMemory.getNote(i).setTimeModification(timeModification);
         }
 

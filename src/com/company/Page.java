@@ -33,11 +33,6 @@ public class Page {
         isModiffied = isM;
     }
 
-    public boolean getIsModified() {
-        return isModiffied;
-    }
-
-
     public void setTimeModification(int time) {
         timeModification = time;
     }

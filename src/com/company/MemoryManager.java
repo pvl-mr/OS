@@ -12,6 +12,7 @@ public class MemoryManager {
     private TablePage phMemory;
     private int allPages = 0;
     private int time = 0;
+    private ArrayList<Page> disk;
 
 
     public MemoryManager(int memorySize, int pageSize) {
@@ -19,6 +20,7 @@ public class MemoryManager {
         this.pageSize = pageSize;
         numberOfPages = memorySize/pageSize;
         phMemory = new TablePage();
+        disk = new ArrayList<Page>();
     }
 
     public void create() {
@@ -69,7 +71,17 @@ public class MemoryManager {
                     if (phMemory.getSize()+1>numberOfPages) {
                         Page pageN = phMemory.getNote(0);
                         System.out.println("Страница " + pageN.getPageId() + " c временной меткой обращения " + pageN.getTimeModification() + " выгружается");
+                        pageN.setIsInPhysicalMemory(false);
+                        disk.add(pageN);
                         phMemory.replace(pageN.getPageId(), new Page(pageId));
+                    }
+                    //если необходмая страница выгружена  на диск
+                    for (int j = 0; j < disk.size(); j++) {
+                        if (pageId == disk.get(j).getPageId()) {
+                            Page newP = new Page(pageId);
+                            newP.setIsInPhysicalMemory(true);
+                            phMemory.addNote(pageId);
+                        }
                     }
                     numInPhMemory = phMemory.getSize()*pageSize;
                     phMemory.addNote(pageId);

@@ -5,7 +5,6 @@ import java.util.ArrayList;
 
 public class TablePage {
     private ArrayList<Page> pages;
-    private int size;
 
     public TablePage() {
         pages = new ArrayList<Page>();
@@ -60,7 +59,5 @@ public class TablePage {
 
         return new TablePage();
     }
-
-
 
 }

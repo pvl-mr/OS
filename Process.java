@@ -10,7 +10,6 @@ public class Process {
     private TablePage tablePages;
     private int processId;
 
-
     public Process(int processId) {
         this.processId = processId;
     }
@@ -22,18 +21,9 @@ public class Process {
        }
     }
 
-    public void printTablePages() {
-        System.out.println(tablePages.toString());
-    }
-
-    public int translate(int processId, int pageId) {
-        return 0;
-    }
-
     public TablePage getTablePage() {
         return tablePages;
     }
-
 
     public int getProcessId() {
         return processId;
@@ -42,7 +32,5 @@ public class Process {
     public void work(int j, int pageId) {
         System.out.println("Страница " + j  + " процесса " + processId + " по адресу " + pageId);
     }
-
-
 
 }

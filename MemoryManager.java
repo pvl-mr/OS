@@ -83,24 +83,4 @@ public class MemoryManager {
     }
 
 
-    public void secondChance() {
-//        Page note;
-//        while (true){
-//            note = phMemory.poll();
-//            if(note.isActive){
-//                note.isActive = false;
-//                pageTableNotes.add(note);
-//            } else{
-//                int physicalPageId = note.numberInPhysicalMemory;
-//                // Как-то должен отправлять на диск страницу.
-//                note.numberInPhysicalMemory = -1;
-//                System.out.println("Выделена физическая память по адресу: " + physicalPageId);
-//                return physicalPageId;
-//            }
-//        }
-    }
-
-
-
-
 }

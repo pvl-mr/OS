@@ -10,9 +10,7 @@ public class TablePage {
         pages = new ArrayList<Page>();
     }
 
-    public void addNote(int pageId) {
-        Page page = new Page(pageId);
-        page.setIsInPhysicalMemory(false);
+    public void addNote(Page page) {
         pages.add(page);
     }
 
@@ -21,6 +19,15 @@ public class TablePage {
             return pages.get(i);
         else
             return null;
+    }
+
+    public Page getNoteId(int pageId) {
+        for (int i = 0; i < pages.size(); i++) {
+            if (pages.get(i).getPageId() == pageId) {
+                return pages.get(i);
+            }
+        }
+        return null;
     }
     
     @Override
@@ -38,6 +45,10 @@ public class TablePage {
                 pages.set(i, newPage);
             }
         }
+    }
+
+    public void deletePage(Page delPage) {
+        pages.remove(delPage);
     }
 
     public TablePage sort() {

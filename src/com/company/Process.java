@@ -17,7 +17,8 @@ public class Process {
     public void createTablePages(int numberOfPages) {
        tablePages = new TablePage();
        for (int i = 0; i < numberOfPages; i++) {
-           tablePages.addNote(i);
+           Page page = new Page(i);
+           tablePages.addNote(page);
        }
     }
 

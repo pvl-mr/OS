@@ -5,12 +5,13 @@ public class Page {
     private int pageId;
     private int bytes = 4;
     private boolean inPhysicalMemory;
-    private boolean isModiffied;
+    private boolean isModified;
     private int timeModification;
+    public int numberInPhysicalMemory;
 
     public Page(int pageId) {
         this.pageId = pageId;
-        isModiffied = false;
+        isModified = false;
     }
 
     public void setIsInPhysicalMemory(boolean allocation) {
@@ -30,7 +31,7 @@ public class Page {
     }
 
     public void setIsModified(boolean isM) {
-        isModiffied = isM;
+        isModified = isM;
     }
 
     public void setTimeModification(int time) {
@@ -39,6 +40,14 @@ public class Page {
 
     public int getTimeModification() {
         return timeModification;
+    }
+
+    public boolean getIsModificied() {
+        return isModified;
+    }
+
+    public void setNumberInPhysicalMemory(int num) {
+        numberInPhysicalMemory = num;
     }
 
 }
